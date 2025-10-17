@@ -30,13 +30,19 @@ resource "libvirt_domain" "server1" {
   memory = 1024
   vcpu   = 2
 
-
+  # Red 1: Red NAT DHCP 1
   network_interface {
     network_id     = libvirt_network.nat-dhcp.id
     wait_for_lease = true
   }
 
-  # Red 2: Red default
+  # Red 2: Red NAT DHCP 2
+  network_interface {
+    network_id     = libvirt_network.nat-dhcp2.id
+    wait_for_lease = true
+  }
+
+  # Red 3: Red default
   network_interface {
     network_name   = "default"
     wait_for_lease = true

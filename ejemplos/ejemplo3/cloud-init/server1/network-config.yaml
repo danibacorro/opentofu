@@ -3,7 +3,8 @@ network:
   ethernets:
     ens3:
       dhcp4: true
-    ens4: 
+    ens4:
       dhcp4: true
-      
+    ens5:
+      dhcp4: true
 
