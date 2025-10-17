@@ -1,6 +1,6 @@
-output "server1" {
+output "tofu1" {
   value = {
-    nombre = "server1"
-    ip     = try(libvirt_domain.server1.network_interface[0].addresses[0], "No disponible")
+    nombre = "tofu1"
+    ip     = try(libvirt_domain.tofu1.network_interface[0].addresses[0], "No disponible")
   }
 }
