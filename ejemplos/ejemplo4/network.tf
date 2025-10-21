@@ -10,8 +10,8 @@ resource "libvirt_network" "nat-dhcp" {
   name      = "nat-dhcp"
   mode      = "nat"
   domain    = "example.com"
-  addresses = ["192.168.100.0/24"]
-  bridge    = "virbr10"
+  addresses = ["192.168.103.0/24"]
+  bridge    = "virbr7"
   dhcp { enabled = true }
   dns { enabled = true }
   autostart = true
@@ -54,8 +54,8 @@ resource "libvirt_network" "aislada-static" {
   name      = "aislada-static"
   autostart = true
   mode      = "none"
-  bridge    = "virbr13"
-  addresses = ["192.168.130.0/24"]
+  bridge    = "virbr8"
+  addresses = ["192.168.104.0/24"]
   dhcp { enabled = false }
 }
 
@@ -63,12 +63,12 @@ resource "libvirt_network" "aislada-static" {
 ##############################################
 # Red muy aislada
 ##############################################
-#resource "libvirt_network" "muy-aislada" {
-#  name   = "muy-aislada"
-#  mode   = "none"      # sin conectividad
-# bridge    = "virbr14"
-#  autostart = true
-#}
+resource "libvirt_network" "muy-aislada" {
+  name   = "muy-aislada"
+  mode   = "none"      # sin conectividad
+ bridge    = "virbr9"
+  autostart = true
+}
 
 ##############################################
 # Red puenteada (bridge) con interfaz física br0

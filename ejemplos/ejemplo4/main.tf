@@ -36,7 +36,12 @@ resource "libvirt_domain" "server1" {
     wait_for_lease = true
   }
 
-  # Red 2: Red aislada-static
+  # Red 2: Red muy-aislada
+  network_interface {
+    network_id = libvirt_network.muy-aislada.id
+  }
+
+  # Red 3: Red aislada-static
   network_interface {
     network_id = libvirt_network.aislada-static.id
   }

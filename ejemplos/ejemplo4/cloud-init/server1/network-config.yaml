@@ -3,7 +3,9 @@ network:
   ethernets:
     ens3:
       dhcp4: true
-    ens4: 
+    ens4:
       dhcp4: false
-      addresses: ["192.168.130.10/24"]
-      
+      addresses: ["192.168.104.10/24"]
+    ens5:
+      dhcp: false
+      addresses: ["172.16.5.5/16"]
